@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/src/include",
-                "C:\\Users\\User\\Desktop\\MyGame\\SFML-2.6.0-windows-gcc-13.1.0-mingw-64-bit\\SFML-2.6.0\\include"
+                "C:\\Users\\User\\Desktop\\SFML-2.6.0-windows-gcc-13.1.0-mingw-64-bit\\SFML-2.6.0\\include"
             ],
             "defines": [
                 "_DEBUG",
