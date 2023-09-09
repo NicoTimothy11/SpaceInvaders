@@ -1,0 +1,3 @@
+/data/data/com.termux/files/home/GitHubRepo/SpaceInvaders/CMakeFiles/myApp.dir
+/data/data/com.termux/files/home/GitHubRepo/SpaceInvaders/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/GitHubRepo/SpaceInvaders/CMakeFiles/rebuild_cache.dir
