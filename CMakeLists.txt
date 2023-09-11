@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)  # Specify the minimum CMake version required
+cmake_minimum_required(VERSION 3.27.4)  # Specify the minimum CMake version required
 
 project(SpaceInvaders)  # Replace with your project name
 
