@@ -4,11 +4,6 @@ int main() {
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Circle");
 
-    // Circle shape
-    sf::CircleShape circle(50);
-    circle.setFillColor(sf::Color::Blue);
-    circle.setPosition(375, 275);
-
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -18,7 +13,6 @@ int main() {
         }
     
         window.clear();
-        window.draw(circle);
         window.display();
     }
 
