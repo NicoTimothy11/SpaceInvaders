@@ -26,7 +26,6 @@ void Game::Update() {
     }
 
     DeleteInactiveLasers();
-    std::cout << "Vector Size:" << spaceship.lasers.size() << std::endl;
 }
 
 void Game::HandleInput() {
