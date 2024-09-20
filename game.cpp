@@ -6,6 +6,7 @@
 Game::Game() 
 {
     obstacles = CreateObstacles();
+    aliens = CreateAliens();
 };
 
 Game::~Game() 
@@ -22,6 +23,10 @@ void Game::Draw() {
 
     for(auto& obstacle : obstacles) {
         obstacle.Draw();
+    }
+    
+    for(auto& alien : aliens) {
+        alien.Draw();
     }
 }
 
@@ -69,4 +74,18 @@ std::vector<Obstacle> Game::CreateObstacles()
     }
 
     return obstacles;
+}
+
+std::vector<Alien> Game::CreateAliens()
+{
+    std::vector<Alien> aliens;
+
+    for(int row = 0; row < 5; row++){
+        for(int column = 0; column < 11; column++) {
+            float x = column * 55;
+            float y = row * 55;
+            aliens.push_back(Alien(1, {x, y}));
+        }
+    }
+    return aliens;
 }
