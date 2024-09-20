@@ -1,7 +1,7 @@
 #include <raylib.h>
 #include "Spaceship.cpp"
 #include "game.cpp"
-#include "obstacle.cpp"
+
 
 int main()
 {
@@ -13,7 +13,6 @@ int main()
     SetTargetFPS(60);
 
     Game game;
-    Obstacle obstacle = Obstacle({100, 100});
 
 
     while (WindowShouldClose() == false)
@@ -24,7 +23,6 @@ int main()
         ClearBackground(black);
         game.Draw();
 
-        obstacle.Draw();
         EndDrawing();
     }
     
