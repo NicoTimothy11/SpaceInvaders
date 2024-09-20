@@ -1,6 +1,7 @@
 #include <raylib.h>
 #include "Spaceship.cpp"
 #include "game.cpp"
+#include "alien.cpp"
 
 
 int main()
@@ -13,6 +14,9 @@ int main()
     SetTargetFPS(60);
 
     Game game;
+    Alien alien = Alien({3, {100, 100}});
+    Alien alien2 = Alien({2, {200, 200}});
+    Alien alien3 = Alien({1, {300, 300}});
 
 
     while (WindowShouldClose() == false)
@@ -22,7 +26,9 @@ int main()
         BeginDrawing();
         ClearBackground(black);
         game.Draw();
-
+        alien.Draw();
+        alien2.Draw();
+        alien3.Draw();
         EndDrawing();
     }
     
