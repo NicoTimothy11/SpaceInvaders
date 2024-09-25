@@ -22,4 +22,6 @@ class Game {
         std::vector<Alien> aliens;
         int AliensDirection;
         std::vector<Laser> alienLasers;
+        constexpr static float AlienLaserShootInterval = 0.35;
+        float timeLastAlienFired;
 };
