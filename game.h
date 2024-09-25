@@ -19,6 +19,7 @@ class Game {
         void MoveAliens();
         void MoveDownAliens(int distance);
         void AlienShootLaser();
+        void CheckCollisions();
         std::vector<Obstacle> obstacles;
         std::vector<Alien> aliens;
         int AliensDirection;
@@ -26,4 +27,6 @@ class Game {
         constexpr static float AlienLaserShootInterval = 0.35;
         float timeLastAlienFired;
         MysteryShip mysteryship;
+        float mysteryShipSpawnInterval;
+        float timeLastSpawn;
 };
