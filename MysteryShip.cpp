@@ -12,7 +12,7 @@ MysteryShip::~MysteryShip()
 }
 
 void MysteryShip::Spawn() {
-    position.y = 90;
+    position.y = 70;
     int side = GetRandomValue(0, 1);
 
     if(side == 0) {
@@ -23,4 +23,19 @@ void MysteryShip::Spawn() {
         speed -= 3;
     }
     Alive = true;
+}
+
+void MysteryShip::Update() {
+    if(Alive) {
+        position.x += speed;
+        if(position.x > GetScreenWidth() - image.width || position.x < 0) {
+            Alive = false; 
+        }
+    } 
+}
+
+void MysteryShip::Draw() {
+    if(Alive) {
+        DrawTextureV(image, position, WHITE);
+    }
 }
