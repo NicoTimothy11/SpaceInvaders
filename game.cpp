@@ -201,5 +201,30 @@ void Game::CheckCollisions()
                }
             }
         }
+
+        if(CheckCollisionRecs(mysteryship.getRect(), laser.getRect())) {
+            mysteryship.Alive = false;
+            laser.active = false;
+        }
+    }
+
+    // Alien Lasers
+
+    for(auto& laser: alienLasers) {
+        if(CheckCollisionRecs(laser.getRect(), spaceship.getRect())) {
+            laser.active = false;
+            std::cout << "Spaceship hit" << std::endl;
+        }
+            for(auto& obstacle: obstacles) {
+            auto it = obstacle.blocks.begin();
+            while(it != obstacle.blocks.end()){
+               if(CheckCollisionRecs(it -> getRect(), laser.getRect())) {
+                    it = obstacle.blocks.erase(it);
+                    laser.active = false;
+               } else {
+                    it++;
+               }
+            }
+        }
     }
 }
