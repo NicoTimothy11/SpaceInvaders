@@ -195,6 +195,7 @@ void Game::CheckCollisions()
                 }else if(it -> type == 3) {
                     score += 300;
                 }
+                CheckForHighScore();
                 
                 it = aliens.erase(it);
                 laser.active = false;
@@ -219,6 +220,7 @@ void Game::CheckCollisions()
             mysteryship.Alive = false;
             laser.active = false;
             score += 500;
+            CheckForHighScore();
         }
     }
 
@@ -279,9 +281,16 @@ void Game::GameInit()
     mysteryShipSpawnInterval = GetRandomValue(10, 20);
     run = true;
     lives = 3;
+    HighScore = 0;
     score = 0;
 }
 
+void Game::CheckForHighScore()
+{
+    if(score > HighScore) {
+        HighScore = score;
+    }
+}
 
 void Game::Reset()
 {

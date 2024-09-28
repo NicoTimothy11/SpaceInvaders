@@ -6,7 +6,7 @@
 std::string FormatWithLeadingZeros(int num, int width) {
     std::string NumberText = std::to_string(num);
     int LeadingZeros = width - NumberText.length();
-    return NumberText = std::string(leadingZeros, '0') + NumberText;
+    return NumberText = std::string(LeadingZeros, '0') + NumberText;
 }
 
 int main()
@@ -49,6 +49,10 @@ int main()
         DrawTextEx(font, "SCORE", {50, 15}, 34, 2, pink);
         std::string scoreText = FormatWithLeadingZeros(game.score, 5);
         DrawTextEx(font, scoreText.c_str(), {50, 40}, 34, 2, pink);
+
+        DrawTextEx(font, "HIGH SCORE", {570, 15}, 34, 2, pink);
+        std::string highscoreText = FormatWithLeadingZeros(game.HighScore, 5);
+        DrawTextEx(font, highscoreText.c_str(), {655, 40}, 34, 2, pink);
 
         game.Draw();
         EndDrawing();

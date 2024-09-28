@@ -14,6 +14,7 @@ class Game {
         bool run;
         int lives;
         int score;
+        int HighScore;
     private:
         void DeleteInactiveLasers();
         Spaceship spaceship;
@@ -26,6 +27,7 @@ class Game {
         void GameOver();
         void Reset();
         void GameInit();
+        void CheckForHighScore();
         std::vector<Obstacle> obstacles;
         std::vector<Alien> aliens;
         int AliensDirection;
