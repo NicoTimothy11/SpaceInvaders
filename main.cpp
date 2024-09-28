@@ -15,6 +15,7 @@ int main()
     InitWindow(screenWidth + offset, screenHeight + 2 * offset, "Space Invaders");
 
     Font font = LoadFontEx("Font/monogram.ttf", 64, 0, 0);
+    Texture2D spaceshipImage = LoadTexture("Graphics/spaceship.png");
 
     SetTargetFPS(60);
 
@@ -33,6 +34,15 @@ int main()
         } else {
             DrawTextEx(font, "GAME OVER", {570, 740}, 34, 2, pink);
         }
+
+        float x = 50.0;
+        for(int i = 0; i < game.lives; i++){
+            DrawTextureV(spaceshipImage, {x, 745}, WHITE);
+            x += 50;
+        }
+
+        DrawTextEx(font, "SCORE", {50, 15}, 34, 2, pink);
+
         game.Draw();
         EndDrawing();
     }
