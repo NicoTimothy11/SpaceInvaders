@@ -44,3 +44,10 @@ Rectangle Spaceship::getRect()
     return {position.x, position.y, float(image.width), float(image.height)};
 
 }
+
+void Spaceship::Reset()
+{
+    position.x = (GetScreenWidth() - image.width)/ 2.0f;
+    position.y = GetScreenHeight() - image.height;
+    lasers.clear();
+}
