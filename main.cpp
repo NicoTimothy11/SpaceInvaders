@@ -52,9 +52,9 @@ int main()
         std::string scoreText = FormatWithLeadingZeros(game.score, 5);
         DrawTextEx(font, scoreText.c_str(), {50, 40}, 34, 2, pink);
 
-        DrawTextEx(font, "HIGH SCORE", {570, 15}, 34, 2, pink);
+        DrawTextEx(font, "HIGH SCORE", {1050, 15}, 34, 2, pink);
         std::string highscoreText = FormatWithLeadingZeros(game.HighScore, 5);
-        DrawTextEx(font, highscoreText.c_str(), {655, 40}, 34, 2, pink);
+        DrawTextEx(font, highscoreText.c_str(), {1050, 40}, 34, 2, pink);
 
         game.Draw();
         EndDrawing();
