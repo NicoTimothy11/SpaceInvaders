@@ -1,6 +1,7 @@
 #include "game.h"
 #include <iostream>
 #include "obstacle.cpp"
+#include <fstream>
 
 
 Game::Game() 
@@ -289,7 +290,32 @@ void Game::CheckForHighScore()
 {
     if(score > HighScore) {
         HighScore = score;
+        SaveHighScoreToFile(HighScore);
     }
+}
+
+void Game::SaveHighScoreToFile(int HighScore)
+{
+    std::ofstream HighScorefile("highscore.txt");
+    if(HighScorefile.is_open()) {
+        HighScorefile << HighScore;
+        HighScorefile.close();
+    } else {
+        std::cerr << "Failed to save" << std::endl; 
+    }
+}
+
+int Game::loadHighScoreFromFile()
+{
+    int LoadedHighScore = 0;
+    std::ifstream HighScorefile("highscore.txt");
+    if(HighScorefile.is_open()) {
+        HighScorefile >> LoadedHighScore;
+        HighScorefile.close();
+    } else {
+        std::cerr << "Failed to load highscore file" << std::endl;
+    }
+    return LoadedHighScore;
 }
 
 void Game::Reset()

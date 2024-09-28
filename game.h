@@ -28,6 +28,8 @@ class Game {
         void Reset();
         void GameInit();
         void CheckForHighScore();
+        void SaveHighScoreToFile(int HighScore);
+        int loadHighScoreFromFile();
         std::vector<Obstacle> obstacles;
         std::vector<Alien> aliens;
         int AliensDirection;
